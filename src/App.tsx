@@ -55,7 +55,6 @@ function Header() {
           <a key={section.href} href={section.href} onClick={() => setMenuOpen(false)}>{section.label}</a>
         ))}
       </nav>
-      <a className="header-contact" href="#contato">Vamos conversar <ArrowUpRight size={15} /></a>
     </header>
   )
 }
@@ -123,7 +122,6 @@ function Story() {
           <motion.div className="story__symbol-mark" aria-hidden="true" animate={{ rotate: reduceMotion ? 0 : 360 }} transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}>
             <Mark />
           </motion.div>
-          <span>01 — 06</span>
         </div>
         <div className="story__text">
           <article className={`story__step${activeSteps.includes(0) ? ' story__step--active' : ''}`} data-story-step="0">
@@ -145,8 +143,7 @@ function Story() {
       <div className="story__mission">
         <span className="story__mission-mark"><Mark /></span>
         <p>Ir além não é fazer mais por fazer.<br /><strong>É cuidar do que faz diferença.</strong></p>
-        <span className="story__mission-note">CONCEITO DA MARCA</span>
-      </div>
+        </div>
     </section>
   )
 }
@@ -163,10 +160,6 @@ function Portfolio() {
   const closingY = useTransform(scrollYProgress, [0.92, 0.99], [28, 0])
   return (
     <section className="portfolio section-pad" id="trabalhos" aria-labelledby="portfolio-title">
-      <div className="portfolio__meta">
-        <span>03 / TRABALHOS</span>
-        <span>Small Studio Barber</span>
-      </div>
       <div ref={sequenceRef} className="portfolio__sequence">
         <div className="portfolio__stage">
           <div className="portfolio__intro">
@@ -227,12 +220,10 @@ function Environment() {
         <div className="section-kicker section-kicker--light"><p className="eyebrow">AMBIENTE</p></div>
         <Reveal><h2 id="environment-title">Um lugar para<br /><em>desacelerar.</em></h2></Reveal>
         <Reveal delay={0.1}><p className="environment__description">Conheça o espaço da Small Studio Barber. Um ambiente para se sentir à vontade e aproveitar o seu momento.</p></Reveal>
-        <div className="environment__stamp"><Mark /><span>SMALL<br />STUDIO<br />BARBER</span></div>
-      </div>
+        </div>
       <div className="environment__media">
         {siteConfig.environmentVideo ? <video autoPlay muted loop playsInline preload="auto" poster={siteConfig.environmentPoster || undefined} aria-label="Vídeo do ambiente da Small Studio Barber"><source src={siteConfig.environmentVideo} type="video/mp4" />Seu navegador não suporta vídeo.</video> : <div className="video-placeholder"><span className="video-placeholder__line" /><span>VÍDEO DO AMBIENTE<br />ARQUIVO PENDENTE</span><span className="video-placeholder__line" /></div>}
-        <span className="environment__media-caption">SMALL STUDIO BARBER · TOUR DO ESPAÇO</span>
-      </div>
+        </div>
     </section>
   )
 }
@@ -262,25 +253,16 @@ function Contact() {
   )
 }
 
-function Footer() {
-  return (
-    <footer className="footer">
-      <a className="footer__brand" href="#inicio"><Mark /><span>small<br /><i>studio barber</i></span></a>
-      <p>Uma ideia em expansão.<br />Small Studio Barber.</p>
-      <a className="footer__top" href="#inicio">Voltar ao início <ArrowUpRight size={15} /></a>
-      <span className="footer__copyright">© {new Date().getFullYear()} SMALL STUDIO BARBER</span>
-    </footer>
-  )
-}
+
 
 function BrandStamp() {
   return (
     <section className="brand-stamp" aria-label="Império Soluções Digitais">
-      <img src="/assets/images/imperio-solucoes-digitais.png" alt="Império Soluções Digitais" width="2048" height="754" loading="lazy" />
+      <img src="/assets/images/imperio-solucoes-digitais-claro.png" alt="Império Soluções Digitais" width="2000" height="740" loading="lazy" />
     </section>
   )
 }
 
 export default function App() {
-  return <><Header /><main><Hero /><Story /><Portfolio /><Environment /><Contact /></main><Footer /><BrandStamp /></>
+  return <><Header /><main><Hero /><Story /><Portfolio /><Environment /><Contact /></main><BrandStamp /></>
 }
