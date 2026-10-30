@@ -1,0 +1,1 @@
+Adicione aqui as fotografias reais do portfólio e o poster do vídeo do ambiente. Atualize os caminhos e textos alternativos em `src/siteConfig.ts`.
